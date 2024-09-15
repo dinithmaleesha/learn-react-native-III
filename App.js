@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import Home from './screens/home';
+import Navigator from './routes/homeStack'
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({
@@ -25,7 +26,7 @@ export default function App() {
     );
   }
 
-  return <Home />;
+  return <Navigator />;
 }
 
 const styles = StyleSheet.create({
