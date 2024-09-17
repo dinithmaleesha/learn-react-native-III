@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, Modal, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Formik } from 'formik'
 import { TextInput } from 'react-native-gesture-handler';
 import * as yup from 'yup';
+import FlatButton from '../shared/button'
 
 const reviewSchema = yup.object().shape({
   title: yup.string()
@@ -66,7 +67,7 @@ export default function ReviewForm({ addReview }) {
               {props.touched.rating && props.errors.rating}
             </Text>
 
-            <Button title='Submit' color='maroon' onPress={props.handleSubmit} />
+            <FlatButton text='Submit' onPress={props.handleSubmit}/>
           </View>
         )}
       </Formik>
